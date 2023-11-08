@@ -1,24 +1,22 @@
-//Restaurant Customers
+//Restaurants Customers
 #include<bits/stdc++.h>
-#define ll long long
 using namespace std;
 int main(){
-    ll t;
-    cin>>t;
-map<int,int>mp;
-    while(t--){
-        ll m,n;
-        cin>>m>>n;
-        mp[m]++;
-        mp[n]--;
+    int n;
+    cin>>n;
+    unordered_map<int,int>mp;
+    while(n--){
+        int a,b;
+        cin>>a>>b;
+        mp[a]++;
+        mp[b]--;
     }
-    ll ans=0;
-    ll maxi=0;
+    int ans=0;
+    int maxi=0;
     for(auto it:mp){
-        ans+=it.second;
-        maxi=max(maxi,ans);
+        maxi+=it.second;
+        ans=max(ans,maxi);
     }
-    cout<<maxi<<endl;
+    cout<<ans<<endl;
     return 0;
-}
-    
+} 
